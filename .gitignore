@@ -16,13 +16,6 @@ x64/
 [Bb]in/
 [Oo]bj/
 
-# Packages (we will download them via NuGet Package Restore)
-
-packages/
-
-# Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
-!packages/*/build/
-
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
