@@ -1,0 +1,34 @@
+﻿@model AgileCamp.Habitator.Models.HabitListVM
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+<div>
+    @foreach (var habit in @Model.Habits)
+    {
+        <div>@habit.Name</div>
+    }
+</div>
+
+@using (Html.BeginForm("Submit", "Habit", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Создать новую привычку</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NewHabit.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    </div>
+}
+
+   
+   
